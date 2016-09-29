@@ -1,5 +1,5 @@
 #### Phase 1: Listing applications
-- [ ] Complete splash screen
+- [X] Complete splash screen
 - [ ] Add dbFlow
 - [ ] Add startup foreground query
 - [ ] Add startup background query
