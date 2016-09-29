@@ -44,6 +44,7 @@ dependencies {
 
     // [Support Library](https://developer.android.com/topic/libraries/support-library/index.html)
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
 
     // [DBFlow](https://github.com/Raizlabs/DBFlow)
     kapt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
