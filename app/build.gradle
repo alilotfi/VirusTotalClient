@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        applicationId "ir.alilo.virustotalclient"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    //[Kotlin](https://kotlinlang.org/docs/reference/using-gradle.html)
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+
+    compile 'com.android.support:appcompat-v7:24.2.0'
+}

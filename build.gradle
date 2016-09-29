@@ -1,0 +1,22 @@
+buildscript {
+    ext.support_version = '24.2.0'
+    ext.kotlin_version = '1.0.4'
+    ext.anko_version = '0.9'
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
