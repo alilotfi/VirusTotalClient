@@ -2,6 +2,8 @@
 VirusTotal for Android checks the applications installed in your Android phone against
 [VirusTotal](http://www.virustotal.com)
 
+![Virus Total Client](https://rawgit.com/alilotfi/VirusTotalClient/master/app/src/main/res/drawable-xxhdpi/img_logo.png "")
+
 It will inform you about malware (virus, trojans, worms) on your phone and allows you to upload any
 unknown applications to VirusTotal. In other words, VirusTotal for Android will get your
 applications scanned by more than 50 antivirus, flagging any undesired content.
