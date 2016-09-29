@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom|center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_spacing">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/primaryImage_spacing"
+        android:layout_weight="1"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img_logo" />
+
+    <TextView
+        android:id="@+id/confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:gravity="center"
+        android:linksClickable="true"
+        android:text="@string/tos_confirmation" />
+
+    <Button
+        android:id="@+id/accept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/activity_spacing"
+        android:background="@drawable/bg_primary_dark"
+        android:text="@string/tos_agreement"
+        android:textColor="@color/txtColor" />
+
+</LinearLayout>
