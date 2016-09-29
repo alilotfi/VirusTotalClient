@@ -7,3 +7,14 @@ unknown applications to VirusTotal. In other words, VirusTotal for Android will 
 applications scanned by more than 50 antivirus, flagging any undesired content.
 Please note that VirusTotal for Android does not provide real-time protection and, so, is no
 substitute for any antivirus product, just a second opinion regarding your apps.
+
+### TODO:
+#### Phase 1: Listing applications
+- [X] Complete splash screen
+- [ ] Add dbFlow
+- [ ] Add startup foreground query
+- [ ] Add startup background query
+- [ ] Add system applications filter
+
+#### Phase 2: Scanning
+#### Phase 3: Uploading
