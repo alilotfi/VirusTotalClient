@@ -30,6 +30,6 @@ dependencies {
     //[Kotlin](https://kotlinlang.org/docs/reference/using-gradle.html)
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-
+    //[Support Library](https://developer.android.com/topic/libraries/support-library/index.html)
     compile 'com.android.support:appcompat-v7:24.2.0'
 }
