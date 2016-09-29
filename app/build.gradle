@@ -36,12 +36,20 @@ android {
     }
 }
 
+def dbflow_version = "3.1.1"
+
 dependencies {
     // [Kotlin](https://kotlinlang.org/docs/reference/using-gradle.html)
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // [Support Library](https://developer.android.com/topic/libraries/support-library/index.html)
     compile 'com.android.support:appcompat-v7:24.2.0'
+
+    // [DBFlow](https://github.com/Raizlabs/DBFlow)
+    kapt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:${dbflow_version}"
 
     // [Dagger2](http://google.github.io/dagger/)
     compile 'com.google.dagger:dagger:2.7'
