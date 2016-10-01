@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Virus Total Unofficial Client</string>
 
-    <!-- ToS -->
+    <!-- ToS Activity -->
     <string name="tos_confirmation">By using this application you agree with
         <a href="@string/tos_tosAddress">VirusTotal\'s Terms of Service and Privacy Policy </a>
     </string>
     <string name="tos_tosAddress">https://www.virustotal.com/en/about/terms-of-service/</string>
     <string name="tos_agreement">Continue</string>
+
+    <!-- Apps Activity -->
+    <string name="apps_systemApps">System Apps</string>
+    <string name="apps_nonSystemApps">Regular Apps</string>
+
+    <!-- App Card -->
+    <string name="cardApp_icon">Application Icon</string>
 </resources>

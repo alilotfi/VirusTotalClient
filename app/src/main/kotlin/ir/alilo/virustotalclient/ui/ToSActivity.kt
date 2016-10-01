@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.Preference
-import ir.alilo.virustotalclient.main.MainActivity
+import ir.alilo.virustotalclient.applist.AppListActivity
 import kotlinx.android.synthetic.main.activity_tos.*
 
 class ToSActivity : AppCompatActivity() {
@@ -33,7 +33,7 @@ class ToSActivity : AppCompatActivity() {
     }
 
     private fun goToMain() {
-        val mainIntent = Intent(this, MainActivity::class.java)
+        val mainIntent = Intent(this, AppListActivity::class.java)
         startActivity(mainIntent)
         finish()
     }
