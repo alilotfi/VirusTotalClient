@@ -11,7 +11,7 @@ class AppListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
-        val appListsAdapter = AppListPagerAdapter(supportFragmentManager)
+        val appListsAdapter = AppListPagerAdapter(this, supportFragmentManager)
         container.adapter = appListsAdapter
         tabs.setupWithViewPager(container)
     }

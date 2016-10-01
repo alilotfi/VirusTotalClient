@@ -2,6 +2,7 @@ package ir.alilo.virustotalclient.injection
 
 import android.app.Application
 import android.content.Context
+import android.content.pm.PackageManager
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -18,5 +19,11 @@ class AndroidModule(val application: Application) {
     @Singleton
     fun provideApplicationContext(): Context {
         return application
+    }
+
+    @Provides
+    @Singleton
+    fun providePackageManager(): PackageManager {
+        return application.packageManager
     }
 }
