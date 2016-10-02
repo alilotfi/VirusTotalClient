@@ -19,8 +19,9 @@ substitute for any antivirus product, just a second opinion regarding your apps.
 - [X] Search Basics
 - [X] Loading
 - [X] Refresh
-- [ ] SmartTabLayout
+- [X] SmartTabLayout
 - [ ] Floating Search View
+- [ ] Settings
 
 #### Phase 2: Scanning
 #### Phase 3: Uploading
