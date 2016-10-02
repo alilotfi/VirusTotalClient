@@ -4,7 +4,8 @@
 - [X] Startup foreground query
 - [X] System applications filter
 - [X] Search Basics
-- [ ] Loading
+- [X] Loading
+- [X] Refresh
 - [ ] SmartTabLayout
 - [ ] Floating Search View
 

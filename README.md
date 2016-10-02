@@ -16,9 +16,12 @@ substitute for any antivirus product, just a second opinion regarding your apps.
 - [X] Database tables
 - [X] Startup foreground query
 - [X] System applications filter
-- [ ] Search
-- [ ] Loading
+- [X] Search Basics
+- [X] Loading
+- [X] Refresh
 - [ ] SmartTabLayout
+- [ ] Floating Search View
 
 #### Phase 2: Scanning
 #### Phase 3: Uploading
+#### Phase 4: UI improvements

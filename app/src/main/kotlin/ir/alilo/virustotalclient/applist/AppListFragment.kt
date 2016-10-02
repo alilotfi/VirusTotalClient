@@ -1,20 +1,21 @@
 package ir.alilo.virustotalclient.applist
 
 import android.os.Bundle
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.wang.avi.AVLoadingIndicatorView
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
 import ir.alilo.virustotalclient.mvp.FragmentView
 import java.util.*
 
-class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppListView {
+class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppListView,
+        SwipeRefreshLayout.OnRefreshListener {
     val adapter by lazy { AppListAdapter(ArrayList()) }
-    lateinit var loading: AVLoadingIndicatorView
+    lateinit var refresh: SwipeRefreshLayout
 
     override fun getLayoutId() = R.layout.fragment_apps
     override fun newPresenter() = AppListPresenter(this)
@@ -28,12 +29,18 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = adapter
 
-        loading = view.findViewById(R.id.loading) as AVLoadingIndicatorView
+        refresh = view.findViewById(R.id.apps_swipeContainer) as SwipeRefreshLayout
+        refresh.setOnRefreshListener(this)
 
         val system = arguments.getBoolean(EXTRA_SYSTEM_BOOLEAN)
         presenter.loadApps(system)
 
         return view
+    }
+
+    override fun onRefresh() {
+        val system = arguments.getBoolean(EXTRA_SYSTEM_BOOLEAN)
+        presenter.reloadApps(system)
     }
 
     fun getTitleId() = if (arguments.getBoolean(EXTRA_SYSTEM_BOOLEAN)) {
@@ -42,12 +49,20 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
         R.string.apps_nonSystemApps
     }
 
-    override fun showLoading() = loading.show()
+    override fun showLoading() {
+        refresh.isRefreshing = true
+    }
 
-    override fun hideLoading() = loading.hide()
+    override fun hideLoading() {
+        refresh.isRefreshing = false
+    }
 
     override fun showApps(apps: List<App>) {
         adapter.addItems(apps)
+    }
+
+    override fun clearApps() {
+        adapter.clearItems()
     }
 
     fun getApps() = adapter.getItems()

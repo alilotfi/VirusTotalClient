@@ -18,6 +18,12 @@ class AppListPresenter(view: AppListView) :
         interactor?.fetchApps(system, if (system) REQUEST_SYSTEM else REQUEST_NON_SYSTEM)
     }
 
+    fun reloadApps(system: Boolean) {
+        view?.showLoading()
+        view?.clearApps()
+        interactor?.fetchApps(system, if (system) REQUEST_SYSTEM else REQUEST_NON_SYSTEM)
+    }
+
     override fun onAppsRetrieved(apps: List<App>, requestCode: Int) {
         view?.showApps(apps)
         view?.hideLoading()
@@ -27,5 +33,6 @@ class AppListPresenter(view: AppListView) :
         fun showLoading()
         fun hideLoading()
         fun showApps(apps: List<App>)
+        fun clearApps()
     }
 }

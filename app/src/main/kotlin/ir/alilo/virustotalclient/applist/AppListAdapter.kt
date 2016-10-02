@@ -10,23 +10,29 @@ import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
 import java.util.*
 
-class AppListAdapter(private val apps: ArrayList<App>) :
+class AppListAdapter(private val items: ArrayList<App>) :
         RecyclerView.Adapter<AppListAdapter.AppViewHolder>() {
 
     fun addItems(apps: List<App>) {
-        val lastSize = this.apps.size
-        this.apps.addAll(apps)
+        val lastSize = items.size
+        items.addAll(apps)
         notifyItemRangeInserted(lastSize, apps.size)
     }
 
-    fun getItems() = apps
+    fun clearItems() {
+        val lastSize = items.size
+        items.clear()
+        notifyItemRangeRemoved(0, lastSize)
+    }
+
+    fun getItems() = items
 
     override fun getItemCount(): Int {
-        return apps.size
+        return items.size
     }
 
     override fun onBindViewHolder(holder: AppViewHolder, position: Int) {
-        holder.bind(apps[position])
+        holder.bind(items[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppViewHolder {
