@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.wang.avi.AVLoadingIndicatorView
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
 import ir.alilo.virustotalclient.mvp.FragmentView
@@ -13,6 +14,7 @@ import java.util.*
 
 class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppListView {
     val adapter by lazy { AppListAdapter(ArrayList()) }
+    lateinit var loading: AVLoadingIndicatorView
 
     override fun getLayoutId() = R.layout.fragment_apps
     override fun newPresenter() = AppListPresenter(this)
@@ -21,10 +23,12 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
                               savedInstanceState: Bundle?): View {
         val view = super.onCreateView(inflater, container, savedInstanceState)
 
-        val recyclerView = view.findViewById(R.id.recyclerView) as RecyclerView
+        val recyclerView = view.findViewById(R.id.apps_list) as RecyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = adapter
+
+        loading = view.findViewById(R.id.loading) as AVLoadingIndicatorView
 
         val system = arguments.getBoolean(EXTRA_SYSTEM_BOOLEAN)
         presenter.loadApps(system)
@@ -37,6 +41,10 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
     } else {
         R.string.apps_nonSystemApps
     }
+
+    override fun showLoading() = loading.show()
+
+    override fun hideLoading() = loading.hide()
 
     override fun showApps(apps: List<App>) {
         adapter.addItems(apps)

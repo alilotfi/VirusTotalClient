@@ -10,4 +10,5 @@
     <dimen name="card_horizontal_padding">10dp</dimen>
     <dimen name="card_corner_radius">4dp</dimen>
     <dimen name="card_app_image_padding">3dp</dimen>
+    <dimen name="loading_padding">10dp</dimen>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wang.avi.AVLoadingIndicatorView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading"
+    style="@style/AVLoadingIndicatorView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:padding="@dimen/loading_padding"
+    app:indicatorColor="@color/colorAccent"
+    app:indicatorName="BallClipRotatePulseIndicator" />
