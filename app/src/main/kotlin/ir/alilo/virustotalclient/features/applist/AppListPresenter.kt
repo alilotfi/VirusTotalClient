@@ -1,4 +1,4 @@
-package ir.alilo.virustotalclient.applist
+package ir.alilo.virustotalclient.features.applist
 
 import ir.alilo.virustotalclient.datasources.db.App
 import ir.alilo.virustotalclient.mvp.Presenter

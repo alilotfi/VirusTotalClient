@@ -1,4 +1,4 @@
-package ir.alilo.virustotalclient.applist
+package ir.alilo.virustotalclient.features.applist
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

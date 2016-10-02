@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="ir.alilo.virustotalclient.applist.AppListActivity">
+    tools:context=".features.applist.AppListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

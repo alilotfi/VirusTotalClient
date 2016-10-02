@@ -1,4 +1,4 @@
-package ir.alilo.virustotalclient.applist
+package ir.alilo.virustotalclient.features.applist
 
 import android.app.SearchManager
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package ir.alilo.virustotalclient.applist
+package ir.alilo.virustotalclient.features.applist
 
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
