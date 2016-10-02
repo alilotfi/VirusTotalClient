@@ -2,7 +2,7 @@ package ir.alilo.virustotalclient.injection
 
 import dagger.Component
 import ir.alilo.virustotalclient.VirusTotal
-import ir.alilo.virustotalclient.applist.AppListInteractor
+import ir.alilo.virustotalclient.features.applist.AppListInteractor
 import javax.inject.Singleton
 
 @Singleton

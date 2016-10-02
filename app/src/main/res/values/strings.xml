@@ -11,7 +11,21 @@
     <!-- Apps Activity -->
     <string name="apps_systemApps">System Apps</string>
     <string name="apps_nonSystemApps">Regular Apps</string>
+    <string name="apps_search">Search Applications</string>
 
     <!-- App Card -->
     <string name="cardApp_icon">Application Icon</string>
+    <string name="apps_label">Applications</string>
+    <string name="apps_settings">Settings</string>
+
+    <!-- Settings Activity -->
+    <string name="settings_label">Settings</string>
+    <string name="settings_about">About</string>
+
+    <!-- About Activity -->
+    <string name="about_website">Website</string>
+    <string name="about_source">Project Source</string>
+    <string name="about_label">About</string>
+    <string name="about_info">Developed and maintained by Ali Lotfi</string>
+    <string name="about_name">Ali Lotfi</string>
 </resources>

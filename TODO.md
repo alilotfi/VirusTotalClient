@@ -3,11 +3,20 @@
 - [X] Database tables
 - [X] Startup foreground query
 - [X] System applications filter
-- [ ] Search
-- [ ] Loading
-- [ ] SmartTabLayout
+- [X] Search Basics
+- [X] Loading
+- [X] Refresh
+- [X] SmartTabLayout
+- [X] SearchView
+- [X] Settings Activity
 
-#### Phase 2: Scanning
+#### Phase 2: CI
+- [ ] transifex.com project
+- [ ] Mock test for phase1
+- [ ] Travis CI build
+
+#### Phase 3: Scanning
+- [ ] Retrofit
 - [ ] Auth API
 - [ ] Scan API
 - [ ] Full scan
@@ -15,8 +24,9 @@
 - [ ] File scan
 - [ ] URL scan
 
-#### Phase 3: Uploading
+#### Phase 4: Uploading
 
-#### Phase 4: UI improvements
+#### Phase 5: UI improvements
 - [ ] Moving ToS screen
 - [ ] Sweet Alert Dialog
+- [ ] Circular FAB animation

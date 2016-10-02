@@ -1,6 +1,7 @@
-package ir.alilo.virustotalclient.applist
+package ir.alilo.virustotalclient.features.applist
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,23 +9,49 @@ import android.widget.ImageView
 import android.widget.TextView
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
-import java.util.*
 
-class AppListAdapter(private val apps: ArrayList<App>) :
+class AppListAdapter(private val items: MutableList<App>) :
         RecyclerView.Adapter<AppListAdapter.AppViewHolder>() {
+    val visibleItems: MutableList<App> = mutableListOf()
+
+    init {
+        visibleItems.addAll(items)
+    }
 
     fun addItems(apps: List<App>) {
-        val lastSize = this.apps.size
-        this.apps.addAll(apps)
+        items.addAll(apps)
+
+        val lastSize = visibleItems.size
+        visibleItems.addAll(apps)
         notifyItemRangeInserted(lastSize, apps.size)
     }
 
+    fun clearItems() {
+        items.clear()
+
+        val lastSize = visibleItems.size
+        visibleItems.clear()
+        notifyItemRangeRemoved(0, lastSize)
+    }
+
+    fun filterItems(query: String) {
+        val newItems = items.filter { it.name?.contains(query, true) ?: true }
+
+        visibleItems.clear()
+        visibleItems.addAll(newItems)
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
-        return apps.size
+        return visibleItems.size
+    }
+
+    override fun getItemId(position: Int): Long {
+        return visibleItems[position].hashCode().toLong()
     }
 
     override fun onBindViewHolder(holder: AppViewHolder, position: Int) {
-        holder.bind(apps[position])
+        holder.bind(visibleItems[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppViewHolder {

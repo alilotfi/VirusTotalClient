@@ -6,4 +6,10 @@
 
     <color name="txtColor">#FFFFFF</color>
     <color name="txtColorDark">#333333</color>
+
+    <color name="iconPrimary">#FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="tab_indicator">#33000000</color>
 </resources>

@@ -1,4 +1,4 @@
-package ir.alilo.virustotalclient.applist
+package ir.alilo.virustotalclient.features.applist
 
 import android.content.Context
 import android.support.v4.app.Fragment
@@ -18,4 +18,6 @@ class AppListPagerAdapter(val context: Context, fragmentManager: FragmentManager
     override fun getCount(): Int {
         return fragments.size
     }
+
+    fun applyFilter(query: String?) = fragments.forEach { it.applyFilter(query) }
 }

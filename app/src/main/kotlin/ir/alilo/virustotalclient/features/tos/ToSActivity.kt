@@ -1,4 +1,4 @@
-package ir.alilo.virustotalclient.ui
+package ir.alilo.virustotalclient.features.tos
 
 import android.content.Intent
 import android.net.Uri
@@ -6,7 +6,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.Preference
-import ir.alilo.virustotalclient.applist.AppListActivity
+import ir.alilo.virustotalclient.features.applist.AppListActivity
+import ir.alilo.virustotalclient.ui.click
 import kotlinx.android.synthetic.main.activity_tos.*
 
 class ToSActivity : AppCompatActivity() {

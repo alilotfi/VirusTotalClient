@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".features.applist.AppListActivity">
+    tools:context=".features.settings.SettingsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -22,32 +22,12 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        <com.ogaclejapan.smarttablayout.SmartTabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/tab_height"
-            android:clipToPadding="false"
-            android:paddingEnd="@dimen/tab_horizontal_padding"
-            android:paddingStart="@dimen/tab_horizontal_padding"
-            app:stl_defaultTabTextColor="@color/txtColor"
-            app:stl_defaultTabTextHorizontalPadding="18dp"
-            app:stl_distributeEvenly="true"
-            app:stl_dividerColor="@color/transparent"
-            app:stl_dividerThickness="0dp"
-            app:stl_indicatorColor="@color/tab_indicator"
-            app:stl_indicatorCornerRadius="@dimen/tab_indicatorCornerRadius"
-            app:stl_indicatorGravity="center"
-            app:stl_indicatorInterpolation="smart"
-            app:stl_indicatorThickness="@dimen/tab_indicatorThickness"
-            app:stl_underlineColor="@color/transparent"
-            app:stl_underlineThickness="0dp" />
-
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/settingsList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>
