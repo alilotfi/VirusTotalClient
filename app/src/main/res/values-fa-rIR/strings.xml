@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">برنامه غیررسمی ویروس توتال</string>
+
+    <!-- ToS Activity -->
+    <string name="tos_confirmation">با استفاده از این برنامه، شما موافقت خود با <a href="@string/tos_tosAddress">شرایط استفاده از خدمات ویروس توتال</a> اعلام می‌کنید.</string>
+    <string name="tos_tosAddress" translatable="false">https://www.virustotal.com/en/about/terms-of-service/</string>
+    <string name="tos_agreement">ادامه</string>
+
+    <!-- Apps Activity -->
+    <string name="apps_systemApps">برنامه‌های سیستمی</string>
+    <string name="apps_nonSystemApps">برنامه‌های عادی</string>
+    <string name="apps_search">جستجو میان برنامه‌ها</string>
+
+    <!-- App Card -->
+    <string name="cardApp_icon">نمایه برنامه</string>
+    <string name="apps_label">برنامه‌ها</string>
+    <string name="apps_settings">تنظیمات</string>
+
+    <!-- Settings Activity -->
+    <string name="settings_label">تنظیمات</string>
+    <string name="settings_about">درباره</string>
+
+    <!-- About Activity -->
+    <string name="about_website">وبسایت</string>
+    <string name="about_source">منبع پروژه</string>
+    <string name="about_label">درباره</string>
+    <string name="about_info">توسعه و نگهداری توسط علی لطفی</string>
+</resources>

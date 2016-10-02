@@ -11,7 +11,7 @@
 - [X] Settings Activity
 
 #### Phase 2: CI
-- [ ] transifex.com project
+- [X] transifex.com project
 - [ ] Mock test for phase1
 - [ ] Travis CI build
 

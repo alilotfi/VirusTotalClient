@@ -12,13 +12,21 @@ applications scanned by more than 50 antivirus, flagging any undesired content.
 Please note that VirusTotal for Android does not provide real-time protection and, so, is no
 substitute for any antivirus product, just a second opinion regarding your apps.
 
+Contribution
+-----
+
+## Translation
+Translation is available under [this](https://www.transifex.com/virus-total-client/virus-total-client/)
+ transifex project. Feel free to translate in each of available languages, or request your own
+ native language for your countrymen.
+
 TODO:
 --------
 
 **Phase 1: Listing applications**
 
 **Phase 2: Scanning**
-- [ ] transifex.com project
+- [X] transifex.com project
 - [ ] Mock test for phase1
 - [ ] Travis CI build
 
