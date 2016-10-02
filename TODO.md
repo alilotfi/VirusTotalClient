@@ -6,8 +6,9 @@
 - [X] Search Basics
 - [X] Loading
 - [X] Refresh
-- [ ] SmartTabLayout
+- [X] SmartTabLayout
 - [ ] Floating Search View
+- [ ] Settings
 
 #### Phase 2: CI
 - [ ] transifex.com project

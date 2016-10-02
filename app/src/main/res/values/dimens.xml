@@ -6,9 +6,14 @@
     <dimen name="appbar_height">75dp</dimen>
     <dimen name="primaryImage_spacing">10dp</dimen>
     <dimen name="card_app_height">50dp</dimen>
-    <dimen name="card_margin">6dp</dimen>
+    <dimen name="card_horizontal_margin">7dp</dimen>
+    <dimen name="card_vertical_margin">4dp</dimen>
     <dimen name="card_horizontal_padding">10dp</dimen>
     <dimen name="card_corner_radius">4dp</dimen>
     <dimen name="card_app_image_padding">3dp</dimen>
     <dimen name="loading_padding">10dp</dimen>
+    <dimen name="tab_indicatorCornerRadius">18dp</dimen>
+    <dimen name="tab_indicatorThickness">36dp</dimen>
+    <dimen name="tab_horizontal_padding">4dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
 </resources>

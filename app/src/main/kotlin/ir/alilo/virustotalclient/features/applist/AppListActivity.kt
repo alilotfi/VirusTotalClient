@@ -10,15 +10,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 
 class AppListActivity : AppCompatActivity() {
-    lateinit var appListsAdapter: AppListPagerAdapter
+    lateinit var appListPagerAdapter: AppListPagerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
-        appListsAdapter = AppListPagerAdapter(this, supportFragmentManager)
-        container.adapter = appListsAdapter
-        tabs.setupWithViewPager(container)
+        appListPagerAdapter = AppListPagerAdapter(this, supportFragmentManager)
+        viewPager.adapter = appListPagerAdapter
+        tabs.setViewPager(viewPager)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -35,13 +35,13 @@ class AppListActivity : AppCompatActivity() {
 
     inner class SearchListener : SearchView.OnQueryTextListener {
         override fun onQueryTextSubmit(query: String?): Boolean {
-            appListsAdapter.getApps()
+            appListPagerAdapter.getApps()
             query?.let { toast(it) }
             return true
         }
 
         override fun onQueryTextChange(newText: String?): Boolean {
-            appListsAdapter.getApps()
+            appListPagerAdapter.getApps()
             newText?.let { toast(it) }
             return true
         }
