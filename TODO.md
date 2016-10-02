@@ -7,7 +7,7 @@
 - [X] Loading
 - [X] Refresh
 - [X] SmartTabLayout
-- [ ] Floating Search View
+- [X] SearchView
 - [ ] Settings
 
 #### Phase 2: CI

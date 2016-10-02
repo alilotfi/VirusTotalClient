@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
 import ir.alilo.virustotalclient.mvp.FragmentView
+import jp.wasabeef.recyclerview.animators.FadeInDownAnimator
 
 class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppListView,
         SwipeRefreshLayout.OnRefreshListener {
@@ -26,6 +27,7 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
         val recyclerView = view.findViewById(R.id.apps_list) as RecyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.itemAnimator = FadeInDownAnimator()
         adapter.setHasStableIds(true)
         recyclerView.adapter = adapter
 

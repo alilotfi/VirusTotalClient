@@ -1,6 +1,7 @@
 package ir.alilo.virustotalclient.features.applist
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,48 +10,48 @@ import android.widget.TextView
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
 
-class AppListAdapter(private val totalItems: MutableList<App>) :
+class AppListAdapter(private val items: MutableList<App>) :
         RecyclerView.Adapter<AppListAdapter.AppViewHolder>() {
-    val showingItems: MutableList<App> = mutableListOf()
+    val visibleItems: MutableList<App> = mutableListOf()
 
     init {
-        showingItems.addAll(totalItems)
+        visibleItems.addAll(items)
     }
 
     fun addItems(apps: List<App>) {
-        totalItems.addAll(apps)
+        items.addAll(apps)
 
-        val lastSize = showingItems.size
-        showingItems.addAll(apps)
+        val lastSize = visibleItems.size
+        visibleItems.addAll(apps)
         notifyItemRangeInserted(lastSize, apps.size)
     }
 
     fun clearItems() {
-        totalItems.clear()
+        items.clear()
 
-        val lastSize = showingItems.size
-        showingItems.clear()
+        val lastSize = visibleItems.size
+        visibleItems.clear()
         notifyItemRangeRemoved(0, lastSize)
     }
 
     fun filterItems(query: String) {
-        val newItems = totalItems.filter { it.name?.contains(query, true) ?: true }
+        val newItems = items.filter { it.name?.contains(query, true) ?: true }
 
-        showingItems.clear()
-        showingItems.addAll(newItems)
+        visibleItems.clear()
+        visibleItems.addAll(newItems)
         notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
-        return showingItems.size
+        return visibleItems.size
     }
 
     override fun getItemId(position: Int): Long {
-        return showingItems[position].hashCode().toLong()
+        return visibleItems[position].hashCode().toLong()
     }
 
     override fun onBindViewHolder(holder: AppViewHolder, position: Int) {
-        holder.bind(showingItems[position])
+        holder.bind(visibleItems[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppViewHolder {

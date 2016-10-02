@@ -65,6 +65,9 @@ dependencies {
 
     // [SmartTabLayout](https://github.com/ogaclejapan/SmartTabLayout)
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+
+    // [RecyclerView Animators](https://github.com/wasabeef/recyclerview-animators)
+    compile 'jp.wasabeef:recyclerview-animators:2.2.4'
 }
 
 kapt {
