@@ -8,7 +8,7 @@
 - [X] Refresh
 - [X] SmartTabLayout
 - [X] SearchView
-- [ ] Settings
+- [X] Settings Activity
 
 #### Phase 2: CI
 - [ ] transifex.com project

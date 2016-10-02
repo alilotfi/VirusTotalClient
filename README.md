@@ -16,18 +16,11 @@ TODO:
 --------
 
 **Phase 1: Listing applications**
-- [X] ToS Confirmation
-- [X] Database tables
-- [X] Startup foreground query
-- [X] System applications filter
-- [X] Search Basics
-- [X] Loading
-- [X] Refresh
-- [X] SmartTabLayout
-- [X] SearchView
-- [ ] Settings
 
 **Phase 2: Scanning**
+- [ ] transifex.com project
+- [ ] Mock test for phase1
+- [ ] Travis CI build
 
 **Phase 3: Uploading**
 

@@ -16,4 +16,10 @@
     <dimen name="tab_indicatorThickness">36dp</dimen>
     <dimen name="tab_horizontal_padding">4dp</dimen>
     <dimen name="tab_height">48dp</dimen>
+    <dimen name="settingsItem_height">60dp</dimen>
+    <dimen name="txt_medium">20sp</dimen>
+    <dimen name="settingsItem_padding">17dp</dimen>
+    <dimen name="about_content_padding">7dp</dimen>
+    <dimen name="about_image_padding">3dp</dimen>
+    <dimen name="about_info_padding">10dp</dimen>
 </resources>

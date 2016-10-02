@@ -4,9 +4,12 @@ import android.app.SearchManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.SearchView
 import ir.alilo.virustotalclient.R
+import ir.alilo.virustotalclient.features.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.intentFor
 
 class AppListActivity : AppCompatActivity() {
     lateinit var appListPagerAdapter: AppListPagerAdapter
@@ -30,6 +33,14 @@ class AppListActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(SearchListener())
 
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?) = when (item?.itemId) {
+        R.id.apps_settings_item -> {
+            startActivity(intentFor<SettingsActivity>())
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 
     inner class SearchListener : SearchView.OnQueryTextListener {

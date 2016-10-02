@@ -55,7 +55,7 @@ dependencies {
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:${dbflow_version}"
 
-    // [Dagger2](http://google.github.io/dagger/)
+    // [Dagger 2](http://google.github.io/dagger/)
     compile 'com.google.dagger:dagger:2.7'
     kapt 'com.google.dagger:dagger-compiler:2.7'
     provided 'org.glassfish:javax.annotation:10.0-b28'

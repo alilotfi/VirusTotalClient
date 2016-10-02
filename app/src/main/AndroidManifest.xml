@@ -21,6 +21,14 @@
             android:name=".features.applist.AppListActivity"
             android:label="@string/apps_label" />
 
+        <activity
+            android:name=".features.settings.SettingsActivity"
+            android:label="@string/settings_label" />
+
+        <activity
+            android:name=".features.settings.about.AboutActivity"
+            android:label="@string/about_label" />
+
     </application>
 
 </manifest>

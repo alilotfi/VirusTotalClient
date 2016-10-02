@@ -9,4 +9,10 @@
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/apps_settings_item"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/apps_settings"
+        app:showAsAction="never" />
+
 </menu>
