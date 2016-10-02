@@ -3,11 +3,13 @@
 - [X] Database tables
 - [X] Startup foreground query
 - [X] System applications filter
-- [ ] Search
+- [X] Search Basics
 - [ ] Loading
 - [ ] SmartTabLayout
+- [ ] Floating Search View
 
 #### Phase 2: Scanning
+- [ ] Retrofit
 - [ ] Auth API
 - [ ] Scan API
 - [ ] Full scan

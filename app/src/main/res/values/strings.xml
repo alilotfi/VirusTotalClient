@@ -11,6 +11,8 @@
     <!-- Apps Activity -->
     <string name="apps_systemApps">System Apps</string>
     <string name="apps_nonSystemApps">Regular Apps</string>
+    <string name="apps_search">Search</string>
+    <string name="apps_searchHint">Application Name</string>
 
     <!-- App Card -->
     <string name="cardApp_icon">Application Icon</string>

@@ -42,6 +42,8 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
         adapter.addItems(apps)
     }
 
+    fun getApps() = adapter.getItems()
+
     companion object {
         val EXTRA_SYSTEM_BOOLEAN = "system:Boolean"
         fun newInstance(system: Boolean): AppListFragment {

@@ -18,4 +18,6 @@ class AppListPagerAdapter(val context: Context, fragmentManager: FragmentManager
     override fun getCount(): Int {
         return fragments.size
     }
+
+    fun getApps() = Pair(nonSystemFragment.getApps(), systemFragment.getApps())
 }

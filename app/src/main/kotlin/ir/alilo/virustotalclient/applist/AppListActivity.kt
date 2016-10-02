@@ -1,18 +1,49 @@
 package ir.alilo.virustotalclient.applist
 
+import android.app.SearchManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.widget.SearchView
 import ir.alilo.virustotalclient.R
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.toast
 
 class AppListActivity : AppCompatActivity() {
+    lateinit var appListsAdapter: AppListPagerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
-        val appListsAdapter = AppListPagerAdapter(this, supportFragmentManager)
+        appListsAdapter = AppListPagerAdapter(this, supportFragmentManager)
         container.adapter = appListsAdapter
         tabs.setupWithViewPager(container)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_apps, menu)
+
+        val searchManager: SearchManager = getSystemService(SEARCH_SERVICE) as SearchManager
+        val searchView: SearchView = menu?.findItem(R.id.apps_search_item)?.actionView as SearchView
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        searchView.setOnQueryTextListener(SearchListener())
+
+        return true
+    }
+
+    inner class SearchListener : SearchView.OnQueryTextListener {
+        override fun onQueryTextSubmit(query: String?): Boolean {
+            appListsAdapter.getApps()
+            query?.let { toast(it) }
+            return true
+        }
+
+        override fun onQueryTextChange(newText: String?): Boolean {
+            appListsAdapter.getApps()
+            newText?.let { toast(it) }
+            return true
+        }
     }
 }

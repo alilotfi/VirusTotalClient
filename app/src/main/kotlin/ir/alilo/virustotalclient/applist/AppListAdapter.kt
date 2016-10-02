@@ -19,6 +19,8 @@ class AppListAdapter(private val apps: ArrayList<App>) :
         notifyItemRangeInserted(lastSize, apps.size)
     }
 
+    fun getItems() = apps
+
     override fun getItemCount(): Int {
         return apps.size
     }
