@@ -19,5 +19,5 @@ class AppListPagerAdapter(val context: Context, fragmentManager: FragmentManager
         return fragments.size
     }
 
-    fun getApps() = Pair(nonSystemFragment.getApps(), systemFragment.getApps())
+    fun applyFilter(query: String?) = fragments.forEach { it.applyFilter(query) }
 }

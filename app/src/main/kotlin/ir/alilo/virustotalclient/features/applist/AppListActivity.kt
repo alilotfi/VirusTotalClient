@@ -7,7 +7,6 @@ import android.view.Menu
 import android.widget.SearchView
 import ir.alilo.virustotalclient.R
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.toast
 
 class AppListActivity : AppCompatActivity() {
     lateinit var appListPagerAdapter: AppListPagerAdapter
@@ -35,14 +34,12 @@ class AppListActivity : AppCompatActivity() {
 
     inner class SearchListener : SearchView.OnQueryTextListener {
         override fun onQueryTextSubmit(query: String?): Boolean {
-            appListPagerAdapter.getApps()
-            query?.let { toast(it) }
+            appListPagerAdapter.applyFilter(query)
             return true
         }
 
         override fun onQueryTextChange(newText: String?): Boolean {
-            appListPagerAdapter.getApps()
-            newText?.let { toast(it) }
+            appListPagerAdapter.applyFilter(newText)
             return true
         }
     }

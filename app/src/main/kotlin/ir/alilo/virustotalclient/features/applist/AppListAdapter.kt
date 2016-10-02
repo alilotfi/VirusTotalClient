@@ -8,31 +8,49 @@ import android.widget.ImageView
 import android.widget.TextView
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
-import java.util.*
 
-class AppListAdapter(private val items: ArrayList<App>) :
+class AppListAdapter(private val totalItems: MutableList<App>) :
         RecyclerView.Adapter<AppListAdapter.AppViewHolder>() {
+    val showingItems: MutableList<App> = mutableListOf()
+
+    init {
+        showingItems.addAll(totalItems)
+    }
 
     fun addItems(apps: List<App>) {
-        val lastSize = items.size
-        items.addAll(apps)
+        totalItems.addAll(apps)
+
+        val lastSize = showingItems.size
+        showingItems.addAll(apps)
         notifyItemRangeInserted(lastSize, apps.size)
     }
 
     fun clearItems() {
-        val lastSize = items.size
-        items.clear()
+        totalItems.clear()
+
+        val lastSize = showingItems.size
+        showingItems.clear()
         notifyItemRangeRemoved(0, lastSize)
     }
 
-    fun getItems() = items
+    fun filterItems(query: String) {
+        val newItems = totalItems.filter { it.name?.contains(query, true) ?: true }
+
+        showingItems.clear()
+        showingItems.addAll(newItems)
+        notifyDataSetChanged()
+    }
 
     override fun getItemCount(): Int {
-        return items.size
+        return showingItems.size
+    }
+
+    override fun getItemId(position: Int): Long {
+        return showingItems[position].hashCode().toLong()
     }
 
     override fun onBindViewHolder(holder: AppViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(showingItems[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppViewHolder {

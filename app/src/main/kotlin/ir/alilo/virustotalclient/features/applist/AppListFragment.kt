@@ -10,11 +10,10 @@ import android.view.ViewGroup
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
 import ir.alilo.virustotalclient.mvp.FragmentView
-import java.util.*
 
 class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppListView,
         SwipeRefreshLayout.OnRefreshListener {
-    val adapter by lazy { AppListAdapter(ArrayList()) }
+    val adapter by lazy { AppListAdapter(mutableListOf()) }
     lateinit var refresh: SwipeRefreshLayout
 
     override fun getLayoutId() = R.layout.fragment_apps
@@ -27,6 +26,7 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
         val recyclerView = view.findViewById(R.id.apps_list) as RecyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(activity)
+        adapter.setHasStableIds(true)
         recyclerView.adapter = adapter
 
         refresh = view.findViewById(R.id.apps_swipeContainer) as SwipeRefreshLayout
@@ -49,6 +49,10 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
         R.string.apps_nonSystemApps
     }
 
+    fun applyFilter(query: String?) {
+        query?.let { adapter.filterItems(query) } ?: adapter.filterItems("")
+    }
+
     override fun showLoading() {
         refresh.isRefreshing = true
     }
@@ -64,8 +68,6 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
     override fun clearApps() {
         adapter.clearItems()
     }
-
-    fun getApps() = adapter.getItems()
 
     companion object {
         val EXTRA_SYSTEM_BOOLEAN = "system:Boolean"
