@@ -3,7 +3,6 @@
 
     <!-- ToS Activity -->
     <string name="tos_confirmation">با استفاده از این برنامه، شما موافقت خود با <a href="@string/tos_tosAddress">شرایط استفاده از خدمات ویروس توتال</a> اعلام می‌کنید.</string>
-    <string name="tos_tosAddress" translatable="false">https://www.virustotal.com/en/about/terms-of-service/</string>
     <string name="tos_agreement">ادامه</string>
 
     <!-- Apps Activity -->
