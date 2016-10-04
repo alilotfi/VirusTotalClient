@@ -1,4 +1,6 @@
 package ir.alilo.virustotalclient.features.settings
 
-class SettingsInteractor {
+import javax.inject.Inject
+
+class SettingsInteractor @Inject constructor() {
 }

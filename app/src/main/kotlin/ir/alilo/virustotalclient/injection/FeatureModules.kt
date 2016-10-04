@@ -1,0 +1,19 @@
+package ir.alilo.virustotalclient.injection
+
+import dagger.Module
+import dagger.Provides
+import ir.alilo.virustotalclient.features.applist.AppListPresenter
+import ir.alilo.virustotalclient.features.settings.SettingsPresenter
+
+@Module
+abstract class FeatureModule<out V : Any>(val view: V) {
+    @Provides
+    @FeatureScope
+    fun provideView() = view
+}
+
+@Module
+class AppListModule(view: AppListPresenter.AppListView) : FeatureModule<AppListPresenter.AppListView>(view)
+
+@Module
+class SettingsModule(view: SettingsPresenter.SettingsView) : FeatureModule<SettingsPresenter.SettingsView>(view)

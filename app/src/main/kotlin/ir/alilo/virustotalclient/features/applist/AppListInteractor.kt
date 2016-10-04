@@ -2,18 +2,14 @@ package ir.alilo.virustotalclient.features.applist
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import ir.alilo.virustotalclient.VirusTotal
 import ir.alilo.virustotalclient.datasources.db.App
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import javax.inject.Inject
 
-class AppListInteractor(val listener: AppListListener) {
+class AppListInteractor @Inject constructor() {
     @Inject lateinit var pm: PackageManager
-
-    init {
-        VirusTotal.getGraph().inject(this)
-    }
+    lateinit var listener: AppListListener
 
     fun fetchApps(system: Boolean, requestCode: Int) {
         var flag = PackageManager.GET_META_DATA
