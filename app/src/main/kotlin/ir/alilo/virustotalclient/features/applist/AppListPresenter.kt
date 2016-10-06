@@ -9,7 +9,7 @@ class AppListPresenter @Inject constructor(view: AppListView?, interactor: AppLi
         AppListInteractor.AppListListener {
     companion object {
         val REQUEST_SYSTEM = 0
-        val REQUEST_NON_SYSTEM = 0
+        val REQUEST_NON_SYSTEM = 1
     }
 
     init {
