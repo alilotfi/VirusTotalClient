@@ -27,10 +27,16 @@ TODO:
 
 **Phase 1: Listing applications**
 
-**Phase 2: Scanning**
-- [X] transifex.com project
-- [ ] Unit test phase1
-- [X] Travis CI build
+**Phase 2: CI**
+
+**Phase 3: Scanning**
+- [ ] Retrofit
+- [ ] Auth API
+- [ ] Scan API
+- [ ] Full scan
+- [ ] Single app scan
+- [ ] File scan
+- [ ] URL scan
 
 **Phase 3: Uploading**
 
