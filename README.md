@@ -27,7 +27,7 @@ TODO:
 
 **Phase 2: Scanning**
 - [X] transifex.com project
-- [ ] Mock test for phase1
+- [ ] Unit test phase1
 - [ ] Travis CI build
 
 **Phase 3: Uploading**

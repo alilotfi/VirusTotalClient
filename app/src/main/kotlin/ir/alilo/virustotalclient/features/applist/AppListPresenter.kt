@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class AppListPresenter @Inject constructor(view: AppListView?, interactor: AppListInteractor) :
         Presenter<AppListPresenter.AppListView, AppListInteractor>(view, interactor),
-        AppListInteractor.AppListListener {
+        AppListListener {
     companion object {
         val REQUEST_SYSTEM = 0
         val REQUEST_NON_SYSTEM = 1

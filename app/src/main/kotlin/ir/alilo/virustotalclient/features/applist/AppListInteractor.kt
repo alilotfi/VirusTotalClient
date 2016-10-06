@@ -7,11 +7,20 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import javax.inject.Inject
 
-class AppListInteractor @Inject constructor() {
-    @Inject lateinit var pm: PackageManager
-    lateinit var listener: AppListListener
+interface AppListInteractor {
+    var listener: AppListListener
+    fun fetchApps(system: Boolean, requestCode: Int)
+}
 
-    fun fetchApps(system: Boolean, requestCode: Int) {
+interface AppListListener {
+    fun onAppsRetrieved(apps: List<App>, requestCode: Int)
+}
+
+class AppListInteractorImpl @Inject constructor() : AppListInteractor {
+    @Inject lateinit var pm: PackageManager
+    override lateinit var listener: AppListListener
+
+    override fun fetchApps(system: Boolean, requestCode: Int) {
         var flag = PackageManager.GET_META_DATA
         if (system) {
             flag = flag or PackageManager.MATCH_SYSTEM_ONLY
@@ -35,9 +44,5 @@ class AppListInteractor @Inject constructor() {
     private fun toApp(appInfo: ApplicationInfo) = with(appInfo) {
         App(packageName, pm.getApplicationLabel(appInfo).toString(), pm.getApplicationIcon(appInfo),
                 isSystemApp(appInfo))
-    }
-
-    interface AppListListener {
-        fun onAppsRetrieved(apps: List<App>, requestCode: Int)
     }
 }

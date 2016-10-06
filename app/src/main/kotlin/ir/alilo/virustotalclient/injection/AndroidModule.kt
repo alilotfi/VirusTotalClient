@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import ir.alilo.virustotalclient.features.applist.AppListInteractor
+import ir.alilo.virustotalclient.features.applist.AppListListener
 import ir.alilo.virustotalclient.features.applist.AppListPresenter
 import javax.inject.Singleton
 
@@ -25,7 +25,7 @@ open class AndroidModule(val application: Application) {
     open fun providePackageManager() = application.packageManager!!
 
     @Provides
-    open fun provideAppListListener(appListPresenter: AppListPresenter): AppListInteractor.AppListListener {
+    open fun provideAppListListener(appListPresenter: AppListPresenter): AppListListener {
         return appListPresenter
     }
 }
