@@ -2,18 +2,17 @@ package ir.alilo.virustotalclient.injection
 
 import android.app.Application
 import android.content.Context
-import android.content.pm.PackageManager
 import dagger.Module
 import dagger.Provides
+import ir.alilo.virustotalclient.features.applist.AppListListener
+import ir.alilo.virustotalclient.features.applist.AppListPresenter
 import javax.inject.Singleton
 
 @Module
-class AndroidModule(val application: Application) {
+open class AndroidModule(val application: Application) {
     @Provides
     @Singleton
-    fun provideApplication(): Application {
-        return application
-    }
+    open fun provideApplication() = application
 
     @Provides
     @Singleton
@@ -23,7 +22,10 @@ class AndroidModule(val application: Application) {
 
     @Provides
     @Singleton
-    fun providePackageManager(): PackageManager {
-        return application.packageManager
+    open fun providePackageManager() = application.packageManager!!
+
+    @Provides
+    open fun provideAppListListener(appListPresenter: AppListPresenter): AppListListener {
+        return appListPresenter
     }
 }

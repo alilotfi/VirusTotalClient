@@ -7,17 +7,15 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import javax.inject.Inject
 
-interface MVPView<out P : Presenter<out Any, out Any>> {
-    fun newPresenter(): P
-}
+interface MVPView
 
-abstract class FragmentView<out P : Presenter<out Any, out Any>> : Fragment(), MVPView<P> {
-    val presenter: P by lazy { newPresenter() }
+abstract class FragmentView<P : Presenter<out Any?, out Any?>> : Fragment(), MVPView {
+    @Inject lateinit var presenter: P
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        presenter.onCreate()
         return inflater.inflate(getLayoutId(), container, false)
     }
 
@@ -30,13 +28,12 @@ abstract class FragmentView<out P : Presenter<out Any, out Any>> : Fragment(), M
     abstract fun getLayoutId(): Int
 }
 
-abstract class ActivityView<out P : Presenter<out Any, out Any>> : AppCompatActivity(), MVPView<P> {
-    val presenter: P by lazy { newPresenter() }
+abstract class ActivityView<P : Presenter<out Any?, out Any?>> : AppCompatActivity(), MVPView {
+    @Inject lateinit var presenter: P
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
-        presenter.onCreate()
     }
 
     override fun onDestroy() {

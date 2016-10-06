@@ -11,9 +11,9 @@
 - [X] Settings Activity
 
 #### Phase 2: CI
-- [ ] transifex.com project
-- [ ] Mock test for phase1
-- [ ] Travis CI build
+- [X] transifex.com project
+- [X] Unit test phase1
+- [X] Travis CI build
 
 #### Phase 3: Scanning
 - [ ] Retrofit

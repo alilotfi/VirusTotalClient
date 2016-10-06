@@ -4,6 +4,8 @@ VirusTotalClient
 VirusTotal for Android checks the applications installed in your Android phone against
 [VirusTotal](http://www.virustotal.com)
 
+[![Build Status](https://travis-ci.org/alilotfi/VirusTotalClient.svg?branch=master)](https://travis-ci.org/alilotfi/VirusTotalClient)
+
 <img src="https://rawgit.com/alilotfi/VirusTotalClient/master/app/src/main/res/drawable-xxhdpi/img_logo.png" alt="Virus Total Client" width="200" height="200"/>
 
 It will inform you about malware (virus, trojans, worms) on your phone and allows you to upload any
@@ -12,15 +14,29 @@ applications scanned by more than 50 antivirus, flagging any undesired content.
 Please note that VirusTotal for Android does not provide real-time protection and, so, is no
 substitute for any antivirus product, just a second opinion regarding your apps.
 
+Contribution
+-----
+
+## Translation
+Translation is available under [this](https://www.transifex.com/virus-total-client/virus-total-client/)
+ transifex project. Feel free to translate in each of available languages, or request your own
+ native language for your countrymen.
+
 TODO:
 --------
 
 **Phase 1: Listing applications**
 
-**Phase 2: Scanning**
-- [ ] transifex.com project
-- [ ] Mock test for phase1
-- [ ] Travis CI build
+**Phase 2: CI**
+
+**Phase 3: Scanning**
+- [ ] Retrofit
+- [ ] Auth API
+- [ ] Scan API
+- [ ] Full scan
+- [ ] Single app scan
+- [ ] File scan
+- [ ] URL scan
 
 **Phase 3: Uploading**
 

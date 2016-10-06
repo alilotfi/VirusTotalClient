@@ -12,7 +12,6 @@ class VirusTotal : Application() {
     override fun onCreate() {
         super.onCreate()
         objectGraph = DaggerApplicationComponent.builder().androidModule(AndroidModule(this)).build()
-        objectGraph.inject(this)
 
         FlowManager.init(FlowConfig.Builder(this).build())
 

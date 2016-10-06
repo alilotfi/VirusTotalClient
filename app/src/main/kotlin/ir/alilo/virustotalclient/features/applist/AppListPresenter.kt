@@ -2,16 +2,19 @@ package ir.alilo.virustotalclient.features.applist
 
 import ir.alilo.virustotalclient.datasources.db.App
 import ir.alilo.virustotalclient.mvp.Presenter
+import javax.inject.Inject
 
-class AppListPresenter(view: AppListView) :
-        Presenter<AppListPresenter.AppListView, AppListInteractor>(view),
-        AppListInteractor.AppListListener {
+class AppListPresenter @Inject constructor(view: AppListView?, interactor: AppListInteractor) :
+        Presenter<AppListPresenter.AppListView, AppListInteractor>(view, interactor),
+        AppListListener {
     companion object {
         val REQUEST_SYSTEM = 0
-        val REQUEST_NON_SYSTEM = 0
+        val REQUEST_NON_SYSTEM = 1
     }
 
-    override fun newInteractor() = AppListInteractor(this)
+    init {
+        interactor.listener = this
+    }
 
     fun loadApps(system: Boolean) {
         view?.showLoading()

@@ -5,7 +5,7 @@
     <string name="tos_confirmation">By using this application you agree with
         <a href="@string/tos_tosAddress">VirusTotal\'s Terms of Service and Privacy Policy </a>
     </string>
-    <string name="tos_tosAddress">https://www.virustotal.com/en/about/terms-of-service/</string>
+    <string name="tos_tosAddress" translatable="false">https://www.virustotal.com/en/about/terms-of-service/</string>
     <string name="tos_agreement">Continue</string>
 
     <!-- Apps Activity -->
@@ -27,5 +27,4 @@
     <string name="about_source">Project Source</string>
     <string name="about_label">About</string>
     <string name="about_info">Developed and maintained by Ali Lotfi</string>
-    <string name="about_name">Ali Lotfi</string>
 </resources>

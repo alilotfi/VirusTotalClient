@@ -8,7 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ir.alilo.virustotalclient.R
+import ir.alilo.virustotalclient.VirusTotal
 import ir.alilo.virustotalclient.datasources.db.App
+import ir.alilo.virustotalclient.injection.AppListModule
+import ir.alilo.virustotalclient.injection.DaggerAppListComponent
 import ir.alilo.virustotalclient.mvp.FragmentView
 import jp.wasabeef.recyclerview.animators.FadeInDownAnimator
 
@@ -18,11 +21,16 @@ class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppLi
     lateinit var refresh: SwipeRefreshLayout
 
     override fun getLayoutId() = R.layout.fragment_apps
-    override fun newPresenter() = AppListPresenter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        val view = super.onCreateView(inflater, container, savedInstanceState)
+        DaggerAppListComponent.builder()
+                .applicationComponent(VirusTotal.getGraph())
+                .appListModule(AppListModule(this))
+                .build()
+                .inject(this)
+
+        val view = inflater.inflate(getLayoutId(), container, false)
 
         val recyclerView = view.findViewById(R.id.apps_list) as RecyclerView
         recyclerView.setHasFixedSize(true)
