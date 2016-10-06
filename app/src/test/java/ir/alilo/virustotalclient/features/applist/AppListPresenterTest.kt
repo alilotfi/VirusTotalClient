@@ -17,13 +17,6 @@ class AppListPresenterTest {
     lateinit var presenter: AppListPresenter
     lateinit var interactor: AppListInteractor
 
-    init {
-        val mockApplication = Mockito.mock(Application::class.java)!!
-        DaggerApplicationComponent.builder()
-                .androidModule(AndroidModule(mockApplication))
-                .build()
-    }
-
     @Before
     fun setUp() {
         view = Mockito.mock(AppListPresenter.AppListView::class.java)
