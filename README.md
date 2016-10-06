@@ -30,7 +30,7 @@ TODO:
 **Phase 2: Scanning**
 - [X] transifex.com project
 - [ ] Unit test phase1
-- [ ] Travis CI build
+- [X] Travis CI build
 
 **Phase 3: Uploading**
 

@@ -13,7 +13,7 @@
 #### Phase 2: CI
 - [X] transifex.com project
 - [ ] Unit test phase1
-- [ ] Travis CI build
+- [X] Travis CI build
 
 #### Phase 3: Scanning
 - [ ] Retrofit
