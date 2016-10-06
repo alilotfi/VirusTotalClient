@@ -1,0 +1,17 @@
+language: android
+jdk: oraclejdk8
+sudo: false
+
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-24.0.2
+    - android-22
+    - android-24
+    - extra-android-m2repository
+
+notifications:
+  email: false
+
+script: ./gradlew test
