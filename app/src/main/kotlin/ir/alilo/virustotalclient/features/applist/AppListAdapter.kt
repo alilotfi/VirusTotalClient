@@ -1,7 +1,6 @@
 package ir.alilo.virustotalclient.features.applist
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import ir.alilo.virustotalclient.R
 import ir.alilo.virustotalclient.datasources.db.App
+import ir.alilo.virustotalclient.ui.click
 
-class AppListAdapter(private val items: MutableList<App>) :
+class AppListAdapter(val presenter: AppListPresenter, private val items: MutableList<App>) :
         RecyclerView.Adapter<AppListAdapter.AppViewHolder>() {
     val visibleItems: MutableList<App> = mutableListOf()
 
@@ -60,12 +60,14 @@ class AppListAdapter(private val items: MutableList<App>) :
         return AppViewHolder(view)
     }
 
-    class AppViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class AppViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val appName = itemView.findViewById(R.id.cardApp_name) as TextView
         val appIcon = itemView.findViewById(R.id.cardApp_icon) as ImageView
         fun bind(app: App) = with(app) {
             appName.text = name
             appIcon.setImageDrawable(icon)
+
+            itemView.click { presenter.rescanApp(items[adapterPosition]) }
         }
     }
 }

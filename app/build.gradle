@@ -60,6 +60,11 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.7'
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
+    // [Retrofit](http://square.github.io/retrofit/)
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
     // [AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)
     compile 'com.wang.avi:library:2.1.3'
 

@@ -4,8 +4,15 @@ import ir.alilo.virustotalclient.datasources.db.App
 import ir.alilo.virustotalclient.mvp.Presenter
 import javax.inject.Inject
 
+interface AppListView {
+    fun showLoading()
+    fun hideLoading()
+    fun showApps(apps: List<App>)
+    fun clearApps()
+}
+
 class AppListPresenter @Inject constructor(view: AppListView?, interactor: AppListInteractor) :
-        Presenter<AppListPresenter.AppListView, AppListInteractor>(view, interactor),
+        Presenter<AppListView, AppListInteractor>(view, interactor),
         AppListListener {
     companion object {
         val REQUEST_SYSTEM = 0
@@ -27,15 +34,13 @@ class AppListPresenter @Inject constructor(view: AppListView?, interactor: AppLi
         interactor?.fetchApps(system, if (system) REQUEST_SYSTEM else REQUEST_NON_SYSTEM)
     }
 
+    fun rescanApp(app: App) {
+        interactor?.scanApp()
+    }
+
     override fun onAppsRetrieved(apps: List<App>, requestCode: Int) {
         view?.showApps(apps)
         view?.hideLoading()
     }
 
-    interface AppListView {
-        fun showLoading()
-        fun hideLoading()
-        fun showApps(apps: List<App>)
-        fun clearApps()
-    }
 }

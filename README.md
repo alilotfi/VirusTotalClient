@@ -38,9 +38,9 @@ TODO:
 - [ ] File scan
 - [ ] URL scan
 
-**Phase 3: Uploading**
+**Phase 4: Uploading**
 
-**Phase 4: UI improvements**
+**Phase 5: UI improvements**
 
 
 License

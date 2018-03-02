@@ -2,22 +2,23 @@ package ir.alilo.virustotalclient.features.applist
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import ir.alilo.virustotalclient.datasources.api.API
 import ir.alilo.virustotalclient.datasources.db.App
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.onComplete
-import org.jetbrains.anko.uiThread
 import javax.inject.Inject
 
 interface AppListInteractor {
     var listener: AppListListener
     fun fetchApps(system: Boolean, requestCode: Int)
+    fun scanApp(resource: String)
 }
 
 interface AppListListener {
     fun onAppsRetrieved(apps: List<App>, requestCode: Int)
 }
 
-class AppListInteractorImpl @Inject constructor(val pm: PackageManager) : AppListInteractor {
+class AppListInteractorImpl @Inject constructor(val pm: PackageManager, val api: API) : AppListInteractor {
     override lateinit var listener: AppListListener
 
     override fun fetchApps(system: Boolean, requestCode: Int) {
@@ -44,5 +45,11 @@ class AppListInteractorImpl @Inject constructor(val pm: PackageManager) : AppLis
     private fun toApp(appInfo: ApplicationInfo) = with(appInfo) {
         App(packageName, pm.getApplicationLabel(appInfo).toString(), pm.getApplicationIcon(appInfo),
                 isSystemApp(appInfo))
+    }
+
+    override fun scanApp(resource: String) {
+        doAsync {
+            api.report(resource).execute()
+        }
     }
 }

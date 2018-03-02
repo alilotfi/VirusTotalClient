@@ -5,6 +5,7 @@ import dagger.Provides
 import ir.alilo.virustotalclient.features.applist.AppListInteractor
 import ir.alilo.virustotalclient.features.applist.AppListInteractorImpl
 import ir.alilo.virustotalclient.features.applist.AppListPresenter
+import ir.alilo.virustotalclient.features.applist.AppListView
 import ir.alilo.virustotalclient.features.settings.SettingsPresenter
 
 @Module
@@ -15,7 +16,7 @@ abstract class FeatureModule<out V : Any>(val view: V) {
 }
 
 @Module
-class AppListModule(view: AppListPresenter.AppListView) : FeatureModule<AppListPresenter.AppListView>(view) {
+class AppListModule(view: AppListView) : FeatureModule<AppListView>(view) {
     @Provides
     @FeatureScope
     fun provideInteractor(appListInteractorImpl: AppListInteractorImpl): AppListInteractor = appListInteractorImpl

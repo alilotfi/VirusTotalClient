@@ -15,9 +15,9 @@ import ir.alilo.virustotalclient.injection.DaggerAppListComponent
 import ir.alilo.virustotalclient.mvp.FragmentView
 import jp.wasabeef.recyclerview.animators.FadeInDownAnimator
 
-class AppListFragment : FragmentView<AppListPresenter>(), AppListPresenter.AppListView,
+class AppListFragment : FragmentView<AppListPresenter>(), AppListView,
         SwipeRefreshLayout.OnRefreshListener {
-    val adapter by lazy { AppListAdapter(mutableListOf()) }
+    val adapter by lazy { AppListAdapter(presenter, mutableListOf()) }
     lateinit var refresh: SwipeRefreshLayout
 
     override fun getLayoutId() = R.layout.fragment_apps

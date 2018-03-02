@@ -30,3 +30,4 @@
 - [ ] Moving ToS screen
 - [ ] Sweet Alert Dialog
 - [ ] Circular FAB animation
+- [ ] Android Swipe Layout

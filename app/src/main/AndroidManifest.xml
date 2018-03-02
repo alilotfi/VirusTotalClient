@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.alilo.virustotalclient">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".VirusTotal"
         android:allowBackup="true"

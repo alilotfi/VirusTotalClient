@@ -13,13 +13,13 @@ import org.mockito.Mockito
 import org.mockito.Mockito.`when` as wen
 
 class AppListPresenterTest {
-    lateinit var view: AppListPresenter.AppListView
+    lateinit var view: AppListView
     lateinit var presenter: AppListPresenter
     lateinit var interactor: AppListInteractor
 
     @Before
     fun setUp() {
-        view = Mockito.mock(AppListPresenter.AppListView::class.java)
+        view = Mockito.mock(AppListView::class.java)
         interactor = Mockito.mock(AppListInteractor::class.java)
         presenter = AppListPresenter(view, interactor)
     }
